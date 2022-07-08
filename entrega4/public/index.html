@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Complete los datos del nuevo producto</h1>
+    <h2 id="accion">Nuevo producto</h2>
+    <form id="formulario" action="/api/productos" method="post">
+        <p>
+            <label for="id">id:</label>
+            <input id="campoId" disabled="false" type="number" name="id">
+        </p>
+        <p>
+            <label for="nombre">Nombre:</label>
+            <input id="campoNom" type="text" name="nombre">
+        </p>
+        <p>
+            <label for="precio">Precio: </label>
+            <input id="campoPre" type="number" name="precio">
+        </p>
+        <p>
+            <label for="imagen">Direccion de la imagen: </label>
+            <input id="campoImg" type="text" name="imagen">
+        </p>
+        <input id="post-btn" type="submit" value="Enviar">
+        <input type="reset" value="Limpiar formulario">
+    </form>
+    <br>
+    <!--
+    <button id="btnNuevo"> Nuevo</button>
+    <button id="btnModificar"> Modificar</button>
+    <button id="btnEliminar"> Eliminar </button></br>
+    
+    <script>
+        document.getElementById("btnNuevo").addEventListener("click", function(){
+            document.getElementById("accion").innerHTML="Nuevo producto";
+            document.getElementById("campoId").disabled=true;
+            document.getElementById("campoNom").disabled=false;
+            document.getElementById("campoPre").disabled=false;
+            document.getElementById("campoImg").disabled=false;
+            document.getElementById("formulario").setAttribute("method","post")
+        });
+        document.getElementById("btnModificar").addEventListener("click", function(){
+            document.getElementById("accion").innerHTML="Modificar producto";
+            document.getElementById("campoId").disabled=false;
+            document.getElementById("campoNom").disabled=false;
+            document.getElementById("campoPre").disabled=false;
+            document.getElementById("campoImg").disabled=false;
+            document.getElementById("formulario").setAttribute("method","put")
+        });
+        document.getElementById("btnEliminar").addEventListener("click", function(){
+            document.getElementById("accion").innerHTML="Eliminar producto";
+            document.getElementById("campoId").disabled=false;
+            document.getElementById("campoNom").disabled=true;
+            document.getElementById("campoPre").disabled=true;
+            document.getElementById("campoImg").disabled=true;
+            document.getElementById("formulario").setAttribute("method","delete")
+        });
+    </script>
+    -->
+</body>
+
+</html>
