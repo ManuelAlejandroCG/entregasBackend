@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+
+<body>
+    <div id="monstersFound"class="container">
+        <h1 style="color:blue"> Monsters for sale</h1>
+    <table id="tabla1" class="table table-dark table-striped">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Icon</th>
+        </tr>
+        <% data.forEach(element => { %>
+        <tr>
+            <td><%= element.id %></td>
+            <td><%= element.nombre %></td>
+            <td>$<%= element.precio %></td>
+            <td><img src="<%= element.url %>"" height=" 50" width="50" alt=""></td>
+        </tr>
+        <% }); %>
+    </table>    
+    <a href="/" class="btn btn-success">To Form</a>
+    </div>
+    <div id="monstersNotFound"class="container">
+        <h1 style="color:blue"> Monsters for sale</h1>
+        <h2 id="empty?" style="color:red;background-color: yellow">Monsters not found! be carefull they might be close</h2>
+        <a href="/" class="btn btn-success">To Form</a>
+    </div>    
+    <script>
+        const isEmpty = document.querySelectorAll("#tabla1 tr").length <= 1;
+        if (isEmpty==true) {
+            document.getElementById("monstersFound").style.display = "none"
+            document.getElementById("monstersNotFound").style.display= "block"
+        }else{
+            document.getElementById("monstersFound").style.display = "block"
+            document.getElementById("monstersNotFound").style.display= "none"
+        }
+/*
+        $(document).ready(function () {
+            $('#tabla1').DataTable({
+                dom: 'Plfrtip',
+                language: {
+                    searchPanes: {
+                        emptyPanes: 'There are no panes to display. :/'
+                    }
+                }
+            });
+        });*/
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+    </script>
+
+</body>
+
+</html>
