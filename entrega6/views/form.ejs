@@ -1,0 +1,71 @@
+ <!DOCTYPE html>
+ <html lang="en">
+
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+         integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+ </head>
+
+ <body>
+     <div class="container">
+         <h1 style="color:blue"> Captured monters registry</h1>
+         <h2 id="username">NN</h2>
+         <form>
+             <div class="mb-3">
+                 <label for="nombre" class="form-label">Name</label>
+                 <input class="form-control" id="nombre" name="nombre" aria-describedby="emailHelp" required>
+
+             </div>
+             <div class="mb-3">
+                 <label for="precio" class="form-label">Price</label>
+                 <input type="number" class="form-control" id="precio"name="precio" required>
+             </div>
+             <div class="mb-3">
+                 <label for="url" class="form-label">URL</label>
+                 <input type="url" class="form-control" id="url" name="url"required>
+                 <div id="emailHelp" class="form-text">Debe ser una direccion valida</div>
+             </div>
+             <button type="submit" id="new"class="btn btn-primary">Cargar</button>
+         </form>
+     </div>
+     <div id="monstersFound" class="container">
+         <table id="tabla1" class="table table-dark table-striped">
+             <tr>
+                 <th>ID</th>
+                 <th>Name</th>
+                 <th>Price</th>
+                 <th>Icon</th>
+             </tr>
+         </table>
+     </div>
+
+     <div class="container" style="background-color:gray; padding-bottom: 5px;">
+         <h2>Chat</h2>
+         <form>
+             <div class="mb-3">
+                 <label for="email" class="form-label">Email</label>
+                 <input type="email" class="form-control" id="email" name="nombre" aria-describedby="emailHelp"
+                     required>
+             </div>
+             <div class="mb-3">
+                 <label for="msj" class="form-label">Mensaje</label>
+                 <input class="form-control" name="msj" id="msj" required>
+             </div>
+             <button type="submit" id="send" class="btn btn-primary">Send</button>
+         </form>
+         <div id="chatBox" style="background-color:aliceblue; margin-bottom: 40px;"></div>
+     </div>
+
+
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+         integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+     </script>
+     <script src="/socket.io/socket.io.js"></script>
+     <script src="/public/form.js"></script>
+ </body>
+
+ </html>
